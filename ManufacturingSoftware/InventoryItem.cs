@@ -12,9 +12,11 @@ namespace ManufacturingSoftware
         public int QuantityInStock { get; private set; }
         public decimal PricePerUnit { get; private set; }
         public string Supplier { get; private set; }
+        public Location Location { get; private set; }
 
 
-        public InventoryItem(int idNumber, string name, string description, int quantityInStock, decimal pricePerUnit, string supplier)
+        public InventoryItem(int idNumber , string name , string description , int quantityInStock, 
+            decimal pricePerUnit, string supplier, Location location)
         {
             IdNumber = idNumber;
             Name = name;
@@ -22,6 +24,7 @@ namespace ManufacturingSoftware
             QuantityInStock = quantityInStock;
             PricePerUnit = pricePerUnit;
             Supplier = supplier;
+            Location = location;
         }
     }
 }
