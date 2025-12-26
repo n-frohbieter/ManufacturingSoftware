@@ -98,9 +98,18 @@ namespace ManufacturingSoftware
             return true;
         }
 
-        public void ChangeLocation(Location location)
+        
+        public bool ChangeLocation(string aisle, string bay, string shelf)
         {
+            if (Location.ChangeAisle(aisle) == true && Location.ChangeBay(bay) == true && Location.ChangeShelf(shelf))
+            {
+                Location.ChangeAisle(aisle);
+                Location.ChangeBay(bay);
+                Location.ChangeShelf(shelf);
+                return true;
+            }
 
+            return false;
         }
     }
 }
