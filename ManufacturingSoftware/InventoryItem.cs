@@ -15,7 +15,7 @@ namespace ManufacturingSoftware
         public Location Location { get; private set; }
 
 
-        public InventoryItem(int idNumber , string name , string description , int quantityInStock, 
+        public InventoryItem(int idNumber, string name, string description, int quantityInStock,
             decimal pricePerUnit, string supplier, Location location)
         {
             IdNumber = idNumber;
@@ -25,6 +25,44 @@ namespace ManufacturingSoftware
             PricePerUnit = pricePerUnit;
             Supplier = supplier;
             Location = location;
+        }
+
+        public bool IncreaseStock(int amount)
+        {
+            if (amount <= 0)
+            {
+                return false;
+            }
+
+            QuantityInStock += amount;
+            return true;
+        }
+
+        public bool DecreaseStock(int amount)
+        {
+            if (amount <= 0)
+            {
+                return false;
+            }
+
+            if (amount > QuantityInStock)
+            {
+                return false;
+            }
+
+            QuantityInStock -= amount;
+            return true;
+        }
+
+        public bool UpdatePricePerUnit(decimal cost)
+        {
+            if (cost <= 0)
+            {
+                return false;
+            }
+
+            PricePerUnit = cost;
+            return true;
         }
     }
 }
