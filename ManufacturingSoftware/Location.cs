@@ -16,5 +16,38 @@ namespace ManufacturingSoftware
             Bay = bay;
             Shelf = shelf;
         }
+
+        public bool ChangeAisle(string aisle)
+        {
+            if (string.IsNullOrWhiteSpace(aisle))
+            {
+                return false;
+            }
+
+            Aisle = aisle;
+            return true;
+        }
+
+        public bool ChangeBay(string bay)
+        {
+            if (string.IsNullOrWhiteSpace(bay))
+            {
+                return false;
+            }
+
+            Bay = bay;
+            return true;
+        }
+
+        public bool ChangeShelf(string shelf)
+        {
+            if (string.IsNullOrWhiteSpace(shelf))
+            {
+                return false;
+            }
+
+            Shelf = shelf;
+            return true;
+        }
     }
 }

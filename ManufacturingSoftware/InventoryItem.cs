@@ -64,5 +64,43 @@ namespace ManufacturingSoftware
             PricePerUnit = cost;
             return true;
         }
+
+        public bool ChangeSupplier(string supplier)
+        {
+            if (string.IsNullOrWhiteSpace(supplier))
+            {
+                return false;
+            }
+
+            Supplier = supplier;
+            return true;
+        }
+
+        public bool ChangeName(string name)
+        {
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                return false;
+            }
+
+            Name = name;
+            return true;
+        }
+
+        public bool ChangeDescription(string description)
+        {
+            if (string.IsNullOrWhiteSpace(description))
+            {
+                return false;
+            }
+
+            Description = description;
+            return true;
+        }
+
+        public void ChangeLocation(Location location)
+        {
+
+        }
     }
 }
