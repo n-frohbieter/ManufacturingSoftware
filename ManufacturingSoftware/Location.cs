@@ -6,13 +6,13 @@ namespace ManufacturingSoftware
 {
     public class Location
     {
-        public string Ailse { get; private set; }
+        public string Aisle { get; private set; }
         public string Bay { get; private set; }
         public string Shelf { get; private set; }
 
-        public Location(string ailse, string bay, string shelf)
+        public Location(string aisle, string bay, string shelf)
         {
-            Ailse = ailse;
+            Aisle = aisle;
             Bay = bay;
             Shelf = shelf;
         }
