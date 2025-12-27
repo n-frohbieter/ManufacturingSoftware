@@ -98,18 +98,20 @@ namespace ManufacturingSoftware
             return true;
         }
 
-        
+       
         public bool ChangeLocation(string aisle, string bay, string shelf)
         {
-            if (Location.ChangeAisle(aisle) == true && Location.ChangeBay(bay) == true && Location.ChangeShelf(shelf))
+            if (!Location.ValidAisle(aisle) ||
+                !Location.ValidBay(bay) ||
+                !Location.ValidShelf(shelf))
             {
-                Location.ChangeAisle(aisle);
-                Location.ChangeBay(bay);
-                Location.ChangeShelf(shelf);
-                return true;
+                return false;
             }
 
-            return false;
+            Location.ChangeAisle(aisle);
+            Location.ChangeBay(bay);
+            Location.ChangeShelf(shelf);
+            return true;
         }
     }
 }
