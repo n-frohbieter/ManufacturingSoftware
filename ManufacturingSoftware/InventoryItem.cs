@@ -101,9 +101,7 @@ namespace ManufacturingSoftware
        
         public bool ChangeLocation(string aisle, string bay, string shelf)
         {
-            if (!Location.ValidAisle(aisle) ||
-                !Location.ValidBay(bay) ||
-                !Location.ValidShelf(shelf))
+            if (!Location.IsValidLocation(aisle, bay, shelf))
             {
                 return false;
             }
