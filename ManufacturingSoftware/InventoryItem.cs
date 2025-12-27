@@ -111,5 +111,10 @@ namespace ManufacturingSoftware
             Location.ChangeShelf(shelf);
             return true;
         }
+
+        public decimal GetItemValue()
+        {
+            return PricePerUnit * QuantityInStock;
+        }
     }
 }
