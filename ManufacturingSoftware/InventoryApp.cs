@@ -4,7 +4,12 @@ using System.Text;
 
 namespace ManufacturingSoftware
 {
-    internal class InventoryApp
+     public class InventoryApp
     {
+        public void DisplayMenu()
+        {
+            Console.WriteLine("Enter 1 to Create a new Inventory Item");
+
+        }
     }
 }
